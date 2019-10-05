@@ -28,7 +28,8 @@ public class BetterCheckboxButton extends CheckboxButton {
 
     private Consumer<Boolean> consumer;
 
-    public BetterCheckboxButton(int p_i51140_1_, int p_i51140_2_, int p_i51140_3_, int p_i51140_4_, String p_i51140_5_, boolean p_i51140_6_, Consumer<Boolean> consumer) {
+    public BetterCheckboxButton(int p_i51140_1_, int p_i51140_2_, int p_i51140_3_, int p_i51140_4_, String p_i51140_5_, 
+                                boolean p_i51140_6_, Consumer<Boolean> consumer) {
         super(p_i51140_1_, p_i51140_2_, p_i51140_3_, p_i51140_4_, p_i51140_5_, p_i51140_6_);
         this.consumer = consumer;
     }
