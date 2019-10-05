@@ -33,11 +33,13 @@ public class BetterTextFieldWidget extends TextFieldWidget {
 
     private NewGuiPasswordField field;
 
-    public BetterTextFieldWidget(FontRenderer fontIn, int p_i51137_2_, int p_i51137_3_, int p_i51137_4_, int p_i51137_5_, String msg) {
+    public BetterTextFieldWidget(FontRenderer fontIn, int p_i51137_2_, int p_i51137_3_, int p_i51137_4_, int p_i51137_5_, 
+                                 String msg) {
         super(fontIn, p_i51137_2_, p_i51137_3_, p_i51137_4_, p_i51137_5_, msg);
     }
 
-    public BetterTextFieldWidget(FontRenderer fontIn, int xIn, int yIn, int widthIn, int heightIn, @Nullable TextFieldWidget p_i51138_6_, String msg) {
+    public BetterTextFieldWidget(FontRenderer fontIn, int xIn, int yIn, int widthIn, int heightIn, 
+                                 @Nullable TextFieldWidget p_i51138_6_, String msg) {
         super(fontIn, xIn, yIn, widthIn, heightIn, p_i51138_6_, msg);
     }
 
