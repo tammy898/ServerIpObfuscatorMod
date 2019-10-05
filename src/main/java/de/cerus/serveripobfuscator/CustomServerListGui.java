@@ -43,7 +43,6 @@ public class CustomServerListGui extends ServerListScreen {
 
     @Override
     protected void init() {
-        //super.init();
 
         try {
             Minecraft.getInstance().keyboardListener.enableRepeatEvents(true);
@@ -66,7 +65,7 @@ public class CustomServerListGui extends ServerListScreen {
                 } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException | NoSuchFieldException e) {
                     e.printStackTrace();
                 }
-//                this.field_213027_d.accept(false);
+
             }));
             field = getClass().getSuperclass().getDeclaredField("field_146302_g");
             field.setAccessible(true);
@@ -92,15 +91,9 @@ public class CustomServerListGui extends ServerListScreen {
                     e.printStackTrace();
                 }
             });
-            //this.children.remove(field.get(this));
             field.set(this, widget);
             this.children.add(widget);
             this.func_212928_a(widget);
-            //
-            //Debug.printMethods(getClass());
-            //
-            //Debug.printMethods(getClass().getSuperclass());
-            //
 
             CheckboxButton button = new BetterCheckboxButton((widget.x + widget.getWidth() + 10), (widget.y),
                     20, 20, I18n.format("serveripobfuscator.gui.showip"), false, show -> {
@@ -114,7 +107,6 @@ public class CustomServerListGui extends ServerListScreen {
                     } catch (IllegalAccessException | NoSuchFieldException e) {
                         e.printStackTrace();
                     }
-                    //widget.setText(textFieldWidget.getText());
                 } else {
                     StringBuilder builder = new StringBuilder();
                     for (int l = 0; l < widget.getText().length(); l++)
@@ -122,7 +114,6 @@ public class CustomServerListGui extends ServerListScreen {
                     widget.setText(builder.toString());
                 }
             });
-            //button.func_212942_a();
             this.addButton(button);
 
             Method method = getClass().getSuperclass().getDeclaredMethod("func_195168_i");
@@ -152,8 +143,6 @@ public class CustomServerListGui extends ServerListScreen {
             BooleanConsumer consumer = (BooleanConsumer) o;
             consumer.accept(true);
 
-            //this.serverData.serverIP = this.ipEdit.getText();
-            //this.field_213027_d.accept(true);
         } catch (IllegalAccessException | NoSuchFieldException e) {
             e.printStackTrace();
         }
@@ -178,7 +167,6 @@ public class CustomServerListGui extends ServerListScreen {
 
     @Override
     public void onClose() {
-        //super.onClose();
         save();
     }
 
