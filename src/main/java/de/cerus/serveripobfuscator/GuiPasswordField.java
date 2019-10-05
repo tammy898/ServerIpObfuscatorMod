@@ -16,11 +16,13 @@ public class GuiPasswordField extends TextFieldWidget {
 
     private String realText = "";
 
-    public GuiPasswordField(FontRenderer p_i51137_1_, int p_i51137_2_, int p_i51137_3_, int p_i51137_4_, int p_i51137_5_, String p_i51137_6_) {
+    public GuiPasswordField(FontRenderer p_i51137_1_, int p_i51137_2_, int p_i51137_3_, int p_i51137_4_, int p_i51137_5_, 
+                            String p_i51137_6_) {
         super(p_i51137_1_, p_i51137_2_, p_i51137_3_, p_i51137_4_, p_i51137_5_, p_i51137_6_);
     }
 
-    public GuiPasswordField(FontRenderer p_i51138_1_, int p_i51138_2_, int p_i51138_3_, int p_i51138_4_, int p_i51138_5_, @Nullable TextFieldWidget p_i51138_6_, String p_i51138_7_) {
+    public GuiPasswordField(FontRenderer p_i51138_1_, int p_i51138_2_, int p_i51138_3_, int p_i51138_4_, int p_i51138_5_, 
+                            @Nullable TextFieldWidget p_i51138_6_, String p_i51138_7_) {
         super(p_i51138_1_, p_i51138_2_, p_i51138_3_, p_i51138_4_, p_i51138_5_, p_i51138_6_, p_i51138_7_);
     }
 
@@ -57,7 +59,6 @@ public class GuiPasswordField extends TextFieldWidget {
 
                 this.setCursorPositionEnd();
                 this.setSelectionPos(this.getCursorPosition());
-                //this.func_212951_d(p_146180_1_);
             }
         } catch (IllegalAccessException | NoSuchFieldException e) {
             e.printStackTrace();
@@ -77,7 +78,6 @@ public class GuiPasswordField extends TextFieldWidget {
             field.setAccessible(true);
             Predicate<String> validator = (Predicate<String>) field.get(this);
 
-            //super.writeText(p_146191_1_);
             String lvt_2_1_ = "";
             String lvt_3_1_ = SharedConstants.filterAllowedCharacters(p_146191_1_);
             int lvt_4_1_ = this.getCursorPosition() < selectionEnd ? this.getCursorPosition() : selectionEnd;
@@ -104,11 +104,6 @@ public class GuiPasswordField extends TextFieldWidget {
                 this.setText(lvt_2_1_);
                 this.func_212422_f(lvt_4_1_ + lvt_7_2_);
                 this.setSelectionPos(this.getCursorPosition());
-
-                //Method method = getClass().getDeclaredMethod("func_212951_d", String.class);
-                //method.setAccessible(true);
-                //method.invoke(this, this.getText());
-                //this.func_212951_d(this.getText());
             }
         } catch (IllegalAccessException | NoSuchFieldException e) {
             e.printStackTrace();
@@ -125,7 +120,6 @@ public class GuiPasswordField extends TextFieldWidget {
                 Field field = getClass().getSuperclass().getDeclaredField("field_212956_h");
                 field.setAccessible(true);
                 field.set(this, Screen.hasShiftDown());
-                //this.field_212956_h = Screen.hasShiftDown();
                 if (Screen.isSelectAll(p_keyPressed_1_)) {
                     this.setCursorPositionEnd();
                     this.setSelectionPos(0);
@@ -167,15 +161,10 @@ public class GuiPasswordField extends TextFieldWidget {
                                 field = getClass().getSuperclass().getDeclaredField("field_212956_h");
                                 field.setAccessible(true);
                                 field.set(this, Screen.hasShiftDown());
-                                //this.field_212956_h = Screen.hasShiftDown();
                             }
 
                             return true;
-                        case 260:
-                        case 264:
-                        case 265:
-                        case 266:
-                        case 267:
+
                         default:
                             return false;
                         case 261:
@@ -185,15 +174,12 @@ public class GuiPasswordField extends TextFieldWidget {
                                 field = getClass().getSuperclass().getDeclaredField("field_212956_h");
                                 field.setAccessible(true);
                                 field.set(this, false);
-                                //this.field_212956_h = false;
                                 Method method = getClass().getSuperclass().getMethod("delete", Integer.class);
                                 method.setAccessible(true);
                                 method.invoke(this, -1);
-                                //this.delete(1);
                                 field = getClass().getSuperclass().getDeclaredField("field_212956_h");
                                 field.setAccessible(true);
                                 field.set(this, Screen.hasShiftDown());
-                                //this.field_212956_h = Screen.hasShiftDown();
                             }
 
                             return true;
