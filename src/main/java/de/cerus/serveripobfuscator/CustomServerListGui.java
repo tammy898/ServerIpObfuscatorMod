@@ -55,7 +55,8 @@ public class CustomServerListGui extends ServerListScreen {
 
                 this.connectToServer();
             })));
-            this.addButton(new Button(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, I18n.format("gui.cancel", new Object[0]), (p_213025_1_) -> {
+            this.addButton(new Button(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, 
+                                      I18n.format("gui.cancel", new Object[0]), (p_213025_1_) -> {
 
                 try {
                     Field f = getClass().getSuperclass().getDeclaredField("field_213027_d");
@@ -69,7 +70,8 @@ public class CustomServerListGui extends ServerListScreen {
             }));
             field = getClass().getSuperclass().getDeclaredField("field_146302_g");
             field.setAccessible(true);
-            textFieldWidget = new BetterTextFieldWidget(this.font, this.width / 2 - 100, 116, 200, 20, I18n.format("addServer.enterIp"));
+            textFieldWidget = new BetterTextFieldWidget(this.font, this.width / 2 - 100, 116, 200, 20, 
+                                                        I18n.format("addServer.enterIp"));
             textFieldWidget.setVisible(false);
             textFieldWidget.setMaxStringLength(128);
             widget = new NewGuiPasswordField(this.font, this.width / 2 - 100, 116,
